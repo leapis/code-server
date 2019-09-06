@@ -4,6 +4,29 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>code-server</title>
+	<style>
+	+    html,
+	+    body {
+	+      position: fixed;
+	+      overflow: hidden;
+	+      width: 100%;
+	+    }
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript">
+	+    $(function(){
+	+      var voidResize = false;
+	+      $(window).resize(function() {
+	+        if (!voidResize) {
+	+          setTimeout(function() {
+	+            voidResize = true;
+	+            window.dispatchEvent(new Event('resize'));
+	+          }, 50);
+	+        }
+	+        voidResize = false;
+	+      });
+	+    });
+	</script>
 </head>
 
 <body style="background: rgb(30, 30, 30);">
